@@ -1,0 +1,208 @@
+/* Responsive Design */
+
+/* Extra small devices (phones, 576px and down) */
+@media only screen and (max-width: 576px) {
+    .navbar {
+        height: auto;
+        padding: 0.5rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.5rem;
+    }
+
+    .nav-right {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #dee2e6;
+    }
+
+    .nav-right .nav-link {
+        padding: 0.5rem 0;
+        width: 100%;
+        text-align: left;
+    }
+
+    .navbar form.d-flex {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .search-inp {
+        width: 100% !important;
+        margin-bottom: 0.5rem;
+        margin-right: 0 !important;
+    }
+
+    .search-btn {
+        width: 100%;
+    }
+
+    .navbar-nav {
+        align-items: start !important;
+        width: 100%;
+    }
+
+    .f-info {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .filter {
+        margin-right: 1rem;
+        margin-top: 1rem;
+    }
+
+    .card-img {
+        height: 25vh;
+    }
+
+    .tax-toggle {
+        margin-left: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .btns {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #filters {
+        justify-content: center;
+    }
+}
+
+/* Small devices (tablets, 577px to 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .navbar {
+        height: auto;
+        padding: 0.75rem;
+    }
+
+    .navbar-collapse {
+        margin-top: 0.5rem;
+    }
+
+    .nav-right {
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .search-inp {
+        width: 100% !important;
+        margin-right: 0.5rem !important;
+    }
+
+    .card-img {
+        height: 28vh;
+    }
+
+    #filters {
+        justify-content: center;
+    }
+}
+
+/* Medium devices (landscape tablets, 769px to 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+    .card-img {
+        height: 30vh;
+    }
+}
+
+/* Common responsive rules */
+@media only screen and (max-width: 992px) {
+    .listing-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Utility classes for responsive design */
+.hide-sm {
+    display: none !important;
+}
+
+@media only screen and (min-width: 576px) {
+    .hide-sm {
+        display: block !important;
+    }
+}
+
+/* Responsive grid system */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.5rem;
+}
+
+.col {
+    flex: 1;
+    padding: 0.5rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .col {
+        flex: 0 0 100%;
+    }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+    .col {
+        flex: 0 0 50%;
+    }
+}
+
+/* Responsive images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive typography */
+@media only screen and (max-width: 576px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+/* Responsive navigation */
+@media only screen and (max-width: 768px) {
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+    }
+}
+
+/* Responsive footer */
+@media only screen and (max-width: 576px) {
+    .f-info-socials i {
+        margin-right: 0.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Ensure proper alignment on desktop */
+@media only screen and (min-width: 769px) {
+    .navbar-collapse {
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    .nav-right {
+        display: flex !important;
+        align-items: center !important;
+        margin-left: auto !important;
+    }
+
+    .navbar form.d-flex {
+        margin: 0 1rem;
+    }
+} 

@@ -1,0 +1,108 @@
+<!-- using ejs mate template ->boilerplate -->
+
+<% layout("/layouts/boilerplate") %>
+
+    <% if (typeof searchQuery !== 'undefined' && searchQuery) { %>
+        <div class="search-results-header mb-3">
+            <h3>Search results for "<%= searchQuery %>"</h3>
+            <% if (allListings.length === 0) { %>
+                <p class="text-muted">No listings found. Try a different search term or <a href="/listings">view all listings</a>.</p>
+            <% } else { %>
+                <p class="text-muted">Found <%= allListings.length %> listing<%= allListings.length === 1 ? '' : 's' %></p>
+            <% } %>
+        </div>
+    <% } %>
+    
+    <div id="filters">
+        <div class="filter">
+            <div><i class="fa-solid fa-fire"></i></div>
+            <p>Trending</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-bed"></i></div>
+            <p>Rooms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain-city"></i></div>
+            <p>Iconic Cities</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-mountain"></i></div>
+            <p>Mountains</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-brands fa-fort-awesome"></i></div>
+            <p>Castles</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-person-swimming"></i></div>
+            <p>Amazing Pools</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-campground"></i></div>
+           <p> Camping</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-cow"></i></div>
+            <p>Farms</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-snowflake"></i></div>
+            <p>Arctic</p>
+        </div>
+
+        <div class="filter">
+            <div><i class="fa-solid fa-igloo"></i></div>
+            <p>Dome</p>
+        </div>
+        <div class="filter">
+            <div><i class="fa-solid fa-ship"></i></div>
+            <p>Boats</p>
+        </div>
+
+        <div class="tax-toggle">
+            <div class="form-check form-switch form-check-reverse">
+                <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                <label class="form-check-label" for="switchCheckDefault">Display Total after Taxes</label>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- cards -->
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+        <% for(let listings of allListings) { %>
+            <a href="/listings/<%= listings._id %>" class="listing-link">
+                <div class="card col listing-card">
+                    <img src="<%= listings.image.url %>" class="card-img-top" alt="listing_img" style="height: 20rem;">
+                    <div class="card-img-overlay"></div>
+                    <div class="card-body">
+                    <p class="card-text">
+        
+                    <b> <%= listings.title %> <br> </b>
+                    &#8377; <%= listings.price.toLocaleString("en-IN")%> /night
+                    <i class="tax-info">&nbsp; &nbsp; +18% GST</i>
+                    </p>
+                    </div>
+                </div>
+
+             </a>
+    
+        <% } %>
+    </div>
+
+    <script>
+        let taxToggle = document.getElementById("switchCheckDefault");
+       
+        taxToggle.addEventListener("click", ()=> {
+            let taxInfo = document.getElementsByClassName("tax-info");
+            for(info of taxInfo) {
+                if(info.style.display != "inline") {
+                    info.style.display = "inline";
+                } else {
+                    info.style.display = "none";
+                }
+            }
+        }); 
+    </script>
