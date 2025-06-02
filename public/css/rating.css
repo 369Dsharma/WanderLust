@@ -48,12 +48,53 @@
   }
   
   .starability-slot {
-    display: block;
-    position: relative;
-    width: 150px;
-    min-height: 60px;
-    padding: 0;
-    border: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .rating-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: center;
+  }
+  
+  @media (max-width: 768px) {
+    .starability-slot {
+      max-width: 250px;
+    }
+    
+    .rating-container {
+      gap: 3px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .starability-slot {
+      max-width: 200px;
+    }
+    
+    .rating-container {
+      gap: 2px;
+    }
+  }
+  
+  /* Ensure stars are properly sized on all devices */
+  .starability-slot label {
+    font-size: 1.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .starability-slot label {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .starability-slot label {
+      font-size: 0.9rem;
+    }
   }
   
   .starability-slot > input {
