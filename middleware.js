@@ -5,8 +5,6 @@ const Review = require("./models/review.js");
 
 module.exports.isLoggedIn = (req,res,next)=>{
     if(!req.isAuthenticated()) {
-      // we want ki agar login kare to usi page pe aajaye naki listing pe chale jaye for that we need to store our  current path in session
-      // and then we will redirect to that path after login
 
       req.session.redirectUrl = req.originalUrl;
       // this will store the current path in session
