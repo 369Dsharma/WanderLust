@@ -7,7 +7,6 @@ body{
 
 .container{
     flex: 1; 
-    /* puri height leli body ne page ki */
 }
 
 .navbar{
@@ -80,7 +79,6 @@ body{
     text-decoration: none;
 }
 
-/* card effect -> overlay effect */
 
 .card-img-overlay{
     opacity: 0;
@@ -91,8 +89,6 @@ body{
     background-color: white;
 }
 
-/* new page styling  */
-/* add button */
 
 .add-btn{
     background-color: #fe424d !important;
