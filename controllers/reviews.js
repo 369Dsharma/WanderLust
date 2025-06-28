@@ -4,7 +4,7 @@ const Listing = require('../models/listing');
 module.exports.createReview = async (req, res) => {
     let listing = await Listing.findById(req.params.id);
     let newReview = new Review(req.body.review);
-    newReview.author = req.user._id; // this will set the author of the review to the user who is logged in
+    newReview.author = req.user._id; 
     // this will set the author of the review to the user who is logged in
     listing.reviews.push(newReview);
     await newReview.save();
@@ -16,8 +16,7 @@ module.exports.createReview = async (req, res) => {
 
   module.exports.destroyReview =     async (req, res) => {
     let { id, reviewId } = req.params;
-    await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } }); //listing id find krke usme review array me se reviewId ko pull krdo
-    // this will remove the review from the listing.
+    await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } }); 
     await Review.findByIdAndDelete(reviewId);
     req.flash("success", "Review deleted!");
     res.redirect(`/listings/${id}`);
