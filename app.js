@@ -28,7 +28,7 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "/public")));
-app.use(express.urlencoded({ extended: true })); // taki req ke andr aaya hua sara data parse ho ske
+app.use(express.urlencoded({ extended: true })); 
 
 
 const dbUrl = process.env.ATLASDB_URL;
@@ -94,14 +94,6 @@ const sessionOptions = {
   },
   // this will set the cookie in the browser and will expire after 7 days
 };
-
-// app.get("/", (req, res) => {
-//   res.send("Hi , I am root");
-// });
-// this is the root route
-// this will send the response to the client
-
-
 
 app.use(session(sessionOptions));
 // session middleware is used to store the session data in the server memory
