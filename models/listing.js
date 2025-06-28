@@ -27,7 +27,6 @@ const listingSchema = new Schema({
   }
 });
 
-// this is a mongoose middleware which will remove the review from the listing when the listing is deleted
 
 listingSchema.post("findOneAndDelete", async(listing)=>{
   if (listing) {
@@ -38,9 +37,7 @@ listingSchema.post("findOneAndDelete", async(listing)=>{
     });
   }
 
-  // after deleting listing this middleware will be called and delete all the reviews related to the deleted listing
 });
-// this is a middleware which will remove the review from the listing when the listing is deleted
 
 const Listing = mongoose.model("Listing", listingSchema);
 module.exports = Listing;
