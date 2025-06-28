@@ -60,7 +60,6 @@ module.exports.renderNewForm = (req, res) => {
     // this will set the owner of the listing to the user who is logged in
     await newListing.save();
     req.flash("success", "Successfully created a new listing!");
-    // this will show the success message on the next page
     res.redirect("/listings");
   };
 
@@ -96,8 +95,7 @@ module.exports.renderNewForm = (req, res) => {
         let { id } = req.params;
         let deletedListing = await Listing.findByIdAndDelete(id);
         req.flash("success", "Successfully deleted the listing!");
-        // this will show the success message on the next page
         console.log(deletedListing);
         res.redirect("/listings");
       };
-      // this will delete the listing and redirect to the listings page
+
